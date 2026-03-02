@@ -1,2 +1,12 @@
-# thomasargo.github.io
-Live portfolio site built with HTML/CSS to display my 3D modeling, engineering, and programming projects.
+# Thomas J. Argo – Portfolio Website
+
+This repository contains the source code for my personal portfolio website, hosted using GitHub Pages.
+
+The site showcases:
+- CAD design projects
+- 3D modeling and 3D printing work
+- Engineering design concepts
+- Programming projects
+
+Live Site:
+https://thomasargo.github.io
