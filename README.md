@@ -7,6 +7,3 @@ The site showcases:
 - 3D modeling and 3D printing work
 - Engineering design concepts
 - Programming projects
-
-Live Site:
-https://thomasargo.github.io
