@@ -16,11 +16,6 @@ min-height:100vh;
 overflow-x:hidden;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
-  
 canvas{
 position:fixed;
 top:0;
@@ -48,6 +43,12 @@ font-size:18px;
 font-weight:bold;
 }
 
+/* Remove purple link color everywhere */
+a{
+text-decoration:none;
+color:inherit;
+}
+
 main{
 flex:1;
 max-width:1000px;
@@ -56,6 +57,11 @@ padding:0 20px;
 text-align:center;
 }
 
+h1{
+font-size:2.8em;
+}
+
+/* PROJECT CARDS */
 .card{
 background:#1e90ff;
 color:white;
@@ -68,15 +74,20 @@ font-size:20px;
 text-align:center;
 transition:all 0.15s ease;
 
-/* solid bottom shadow */
-box-shadow:0 8px 0 #0d6efd;
+/* Solid depth + soft shadow */
+box-shadow:
+0 6px 0 #0d6efd,
+0 12px 20px rgba(0,0,0,0.25);
 }
 
 .card:hover{
 transform:translateY(4px);
-box-shadow:0 4px 0 #0d6efd;
+box-shadow:
+0 3px 0 #0d6efd,
+0 8px 15px rgba(0,0,0,0.25);
 }
 
+/* MOBILE FIX */
 @media (max-width: 768px){
 
 main{
@@ -88,11 +99,11 @@ align-items:center;
 .card{
 display:block;
 width:90%;
-margin:20px 0;
+margin:20px auto;
 }
 
 }
-  
+
 footer{
 text-align:center;
 padding:25px 0;
@@ -118,6 +129,7 @@ color:#aaa;
 <a href="models.html"><div class="card">3D Models</div></a>
 <a href="websites.html"><div class="card">Websites</div></a>
 <a href="apps.html"><div class="card">Apps</div></a>
+
 </main>
 
 <footer>
