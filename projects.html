@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
@@ -31,27 +35,20 @@ width:100%;
 background:#111;
 padding:15px 40px;
 display:flex;
-justify-content:flex-start;
+gap:30px;
 z-index:1000;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-right:30px;
 font-size:18px;
 font-weight:bold;
 }
 
-/* Remove purple link color everywhere */
-a{
-text-decoration:none;
-color:inherit;
-}
-
 main{
 flex:1;
-max-width:1000px;
+max-width:1100px;
 margin:140px auto 60px auto;
 padding:0 20px;
 text-align:center;
@@ -59,49 +56,55 @@ text-align:center;
 
 h1{
 font-size:2.8em;
+margin-bottom:50px;
 }
 
-/* PROJECT CARDS */
+/* FLEX CONTAINER FOR CARDS */
+.categories{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+/* CARD STYLE */
 .card{
 background:#1e90ff;
 color:white;
-padding:50px;
-margin:30px;
-border-radius:15px;
-display:inline-flex;
+width:300px;
+height:130px;
+border-radius:20px;
+display:flex;
+align-items:center;
 justify-content:center;
-align-items:center;  
-width:260px;
 font-size:20px;
-text-align:center;
 transition:all 0.15s ease;
+text-decoration:none;
 
-/* Solid depth + soft shadow */
+/* clean solid depth */
 box-shadow:
-0 6px 0 #0d6efd,
-0 12px 20px rgba(0,0,0,0.25);
+0 8px 0 #0d6efd,
+0 15px 25px rgba(0,0,0,0.25);
 }
 
 .card:hover{
 transform:translateY(4px);
 box-shadow:
-0 3px 0 #0d6efd,
-0 8px 15px rgba(0,0,0,0.25);
+0 4px 0 #0d6efd,
+0 10px 20px rgba(0,0,0,0.25);
 }
 
 /* MOBILE FIX */
 @media (max-width: 768px){
 
-main{
-display:flex;
+.categories{
 flex-direction:column;
 align-items:center;
 }
 
 .card{
-display:block;
 width:90%;
-margin:20px auto;
+max-width:400px;
 }
 
 }
@@ -128,9 +131,11 @@ color:#aaa;
 <main>
 <h1>Project Categories</h1>
 
+<div class="categories">
 <a href="models.html" class="card">3D Models</a>
 <a href="websites.html" class="card">Websites</a>
-<a href="apps.html" class="card">Apps</a>  
+<a href="apps.html" class="card">Apps</a>
+</div>
 
 </main>
 
