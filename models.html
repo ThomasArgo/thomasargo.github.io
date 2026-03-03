@@ -3,60 +3,34 @@
 <head>
 <title>3D Models | Thomas Argo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body{margin:0;font-family:Arial;background:#0f2027;color:white;}
+body{margin:0;font-family:Arial;background:#0f2027;color:#e6f1ff;display:flex;flex-direction:column;min-height:100vh;}
 canvas{position:fixed;top:0;left:0;z-index:-1;}
 nav{position:fixed;top:0;width:100%;background:#111;padding:15px 40px;}
-nav a{color:white;text-decoration:none;margin-right:25px;font-weight:bold;}
-
-.container{max-width:1000px;margin:140px auto;padding:0 20px;}
-
-.project{
-background:#1b2a38;
-padding:25px;
-margin-bottom:30px;
-border-radius:10px;
-}
-
-.image-grid{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin-top:15px;
-}
-
-.image-grid img{
-width:48%;
-border-radius:8px;
-}
-
-footer{
-width:100%;
-text-align:center;
-padding:25px 0;
-background:#111;
-color:#aaa;
-margin-top:80px;
-}
+nav a{color:white;text-decoration:none;margin-right:30px;font-size:18px;font-weight:bold;}
+main{flex:1;margin:150px auto 80px auto;max-width:1000px;padding:0 20px;}
+.project{background:#1b2a38;padding:30px;border-radius:12px;margin-bottom:40px;}
+.image-grid{display:flex;flex-wrap:wrap;gap:15px;margin-top:20px;}
+.image-grid img{width:48%;border-radius:8px;}
+footer{text-align:center;padding:25px 0;background:#111;color:#aaa;}
 </style>
 </head>
 
 <body>
-
 <canvas id="bg"></canvas>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<div class="container">
+<main>
 
 <h1>3D Modeling Projects</h1>
 
 <div class="project">
-<h2>Zero-Turn Lawn Mower</h2>
+<h2>Zero Turn Lawn Mower</h2>
 <div class="image-grid">
 <img src="ZeroTurn1.png">
 <img src="ZeroTurn2.png">
@@ -67,15 +41,15 @@ margin-top:80px;
 
 <div class="project">
 <h2>Tensegrity Table</h2>
-<img src="TensegrityTable.png" style="width:50%;border-radius:8px;">
+<img src="TensegrityTable.png" style="width:60%;border-radius:8px;">
 </div>
 
 <div class="project">
 <h2>Butterfly Valve Body</h2>
-<img src="ButterflyValve.png" style="width:50%;border-radius:8px;">
+<img src="ButterflyValve.png" style="width:60%;border-radius:8px;">
 </div>
 
-</div>
+</main>
 
 <footer>
 Thomas J. Argo © 2026
@@ -86,15 +60,13 @@ const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
-
 let particles=[];
-for(let i=0;i<120;i++){
-particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+1,s:Math.random()*1.2+0.5});
+for(let i=0;i<160;i++){
+particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*4+1,s:Math.random()*1.5+0.5});
 }
-
 function animate(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="rgba(255,255,255,0.35)";
+ctx.fillStyle="rgba(255,255,255,0.5)";
 particles.forEach(p=>{
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
