@@ -3,10 +3,11 @@
 <head>
 <title>Projects | Thomas Argo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#0f2027;
 color:#e6f1ff;
 display:flex;
@@ -15,16 +16,23 @@ min-height:100vh;
 overflow-x:hidden;
 }
 
-canvas{position:fixed;top:0;left:0;z-index:-1;}
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
 
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 background:#111;
 padding:15px 40px;
 display:flex;
 justify-content:flex-start;
+z-index:1000;
 }
 
 nav a{
@@ -37,8 +45,9 @@ font-weight:bold;
 
 main{
 flex:1;
-margin:150px auto 80px auto;
 max-width:1000px;
+margin:140px auto 60px auto;
+padding:0 20px;
 text-align:center;
 }
 
@@ -49,14 +58,7 @@ margin:30px;
 border-radius:15px;
 display:inline-block;
 width:260px;
-cursor:pointer;
-transition:.3s;
 font-size:20px;
-}
-
-.card:hover{
-background:#24384d;
-transform:translateY(-8px);
 }
 
 footer{
@@ -96,10 +98,12 @@ const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
+
 let particles=[];
 for(let i=0;i<160;i++){
 particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*4+1,s:Math.random()*1.5+0.5});
 }
+
 function animate(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 ctx.fillStyle="rgba(255,255,255,0.5)";
