@@ -52,13 +52,23 @@ text-align:center;
 }
 
 .card{
-background:#1b2a38;
+background:#1e90ff;
+color:white;
 padding:50px;
 margin:30px;
 border-radius:15px;
 display:inline-block;
 width:260px;
 font-size:20px;
+text-align:center;
+transition:all 0.25s ease;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+background:#0d6efd;
+transform:translateY(-8px);   /* 👈 slight upward movement */
+box-shadow:0 12px 25px rgba(0,0,0,0.4);
 }
 
 footer{
