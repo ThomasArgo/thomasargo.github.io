@@ -16,6 +16,11 @@ min-height:100vh;
 overflow-x:hidden;
 }
 
+a{
+text-decoration:none;
+color:inherit;
+}
+  
 canvas{
 position:fixed;
 top:0;
@@ -72,12 +77,14 @@ transform:translateY(4px);
 box-shadow:0 4px 0 #0d6efd;
 }
 
-@media (max-width: 600px){
+@media (max-width: 768px){
+
 .card{
+display:block;
 width:90%;
 margin:20px auto;
-display:block;
 }
+
 }
   
 footer{
