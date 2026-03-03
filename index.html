@@ -13,7 +13,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* Stronger animated background */
+/* Particle Background */
 canvas{
 position:fixed;
 top:0;
@@ -38,19 +38,13 @@ margin-right:25px;
 font-weight:bold;
 }
 
-nav a:hover{
-opacity:.7;
-}
+nav a:hover{opacity:.7;}
 
+/* Layout */
 .container{
 max-width:1000px;
-margin:120px auto 40px auto;
+margin:120px auto 60px auto;
 padding:0 20px;
-}
-
-h1{
-font-size:2.5em;
-margin-bottom:10px;
 }
 
 button{
@@ -58,13 +52,19 @@ padding:12px 25px;
 background:#1e90ff;
 border:none;
 color:white;
-font-size:1em;
 border-radius:6px;
 cursor:pointer;
 }
 
-button:hover{
-background:#0d6efd;
+button:hover{background:#0d6efd;}
+
+footer{
+width:100%;
+text-align:center;
+padding:25px 0;
+background:#111;
+color:#aaa;
+margin-top:80px;
 }
 </style>
 </head>
@@ -94,6 +94,10 @@ Freshman Computer Science major with experience in mechanical CAD design,
 </a>
 </div>
 
+<footer>
+Thomas J. Argo © 2026
+</footer>
+
 <script>
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
@@ -101,30 +105,30 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-for(let i=0;i<80;i++){
+for(let i=0;i<120;i++){
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-radius:Math.random()*3+1,
-speed:Math.random()*1+0.5
+r:Math.random()*3+1,
+s:Math.random()*1.2+0.5
 });
 }
 
 function animate(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="rgba(255,255,255,0.3)";
+ctx.fillStyle="rgba(255,255,255,0.35)";
 particles.forEach(p=>{
 ctx.beginPath();
-ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
-p.y-=p.speed;
+p.y-=p.s;
 if(p.y<0)p.y=canvas.height;
 });
 requestAnimationFrame(animate);
 }
 animate();
 
-window.onresize=function(){
+window.onresize=()=>{
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 };
