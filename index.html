@@ -2,78 +2,207 @@
 <html>
 <head>
     <title>Thomas J. Argo | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f6f8;
-            color: #333;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: white;
+            overflow-x: hidden;
         }
+
+        /* Floating background bubbles */
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubbles span {
+            position: absolute;
+            bottom: -100px;
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            animation: rise 25s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-1200px) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        nav {
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
         h1 {
             margin-bottom: 5px;
+            font-size: 2.5em;
         }
+
         h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
+            margin-top: 60px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 8px;
         }
+
         .project {
-            background: white;
-            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .project small {
+            color: #ccc;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-top: 15px;
+        }
+
+        .image-grid img {
+            width: 48%;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .image-grid img {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
+
+<div class="bubbles">
+    <span style="left:10%; animation-duration: 20s;"></span>
+    <span style="left:25%; animation-duration: 26s;"></span>
+    <span style="left:40%; animation-duration: 18s;"></span>
+    <span style="left:55%; animation-duration: 30s;"></span>
+    <span style="left:70%; animation-duration: 22s;"></span>
+    <span style="left:85%; animation-duration: 28s;"></span>
+</div>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#mechanical">3D Modeling</a>
+    <a href="#software">Software</a>
+</nav>
+
+<div class="container">
 
 <h1>Thomas J. Argo</h1>
 <p>Computer Science Major | CAD Designer | Developer</p>
 
-<h2>About Me</h2>
+<h2 id="about">About Me</h2>
 <p>
-I am a Freshman Computer Science major with experience in mechanical CAD design, 3D printing,
-and foundational programming. I enjoy building real-world technical projects
-that combine engineering principles with digital tools.
+Freshman Computer Science major with experience in mechanical CAD design, 3D printing,
+and foundational programming. I enjoy building real-world technical systems that combine
+engineering principles with digital tools.
 </p>
 
-<h2>Projects (With Images)</h2>
+<h2 id="mechanical">3D Modeling & Mechanical Design</h2>
 
 <div class="project">
     <h3>Zero-Turn Lawn Mower Assembly</h3>
-    <h3>Created in Blender</h3>
-    <p>Fully detailed mechanical assembly modeled with precise scaling, structural alignment, and component relationships.</p>
+    <small>Created in Blender</small>
+    <p>Fully detailed mechanical assembly modeled with precise scaling and component relationships.</p>
 
-    <img src="ZeroTurn1.png" alt="Zero Turn Model 1" style="max-width:35%; border-radius:8px; margin-top:10px;">
-    <img src="ZeroTurn2.png" alt="Zero Turn Model 2" style="max-width:35%; border-radius:8px; margin-top:10px;">
-    <img src="ZeroTurn3.png" alt="Zero Turn Model 3" style="max-width:35%; border-radius:8px; margin-top:10px;">
-    <img src="ZeroTurn4.png" alt="Zero Turn Model 4" style="max-width:35%; border-radius:8px; margin-top:10px;">
+    <div class="image-grid">
+        <img src="ZeroTurn1.png" alt="Zero Turn Model 1">
+        <img src="ZeroTurn2.png" alt="Zero Turn Model 2">
+        <img src="ZeroTurn3.png" alt="Zero Turn Model 3">
+        <img src="ZeroTurn4.png" alt="Zero Turn Model 4">
+    </div>
 </div>
 
 <div class="project">
     <h3>Tensegrity Table</h3>
-    <h3>Created in Onshape</h3>
-    <p>Designed a structurally balanced model using principles of tension and compression in Onshape.</p>
+    <small>Created in Onshape</small>
+    <p>Designed a structurally balanced model using principles of tension and compression.</p>
 
-    <img src="TensegrityTable.png" alt = "Tensegrity Table Model" style ="max-width:35%; border-radius:8px; margin-top:10px;">
+    <div class="image-grid">
+        <img src="TensegrityTable.png" alt="Tensegrity Table Model">
+    </div>
 </div>
 
 <div class="project">
     <h3>Butterfly Valve Body</h3>
-    <h3>Created in Onshape</h3>
-    <p>Designed and modeled a functional butterfly valve body in Onshape with precise dimensional constraints and component alignment.</p>
+    <small>Created in Onshape</small>
+    <p>Modeled a functional butterfly valve body with precise dimensional constraints and alignment.</p>
 
-    <img src="ButterflyValve.png" alt = "Butterfly Valve Body Model" style = "max-width:35%; border-radius:8px; margin-top:10px;">
+    <div class="image-grid">
+        <img src="ButterflyValve.png" alt="Butterfly Valve Body Model">
+    </div>
 </div>
-    
+
 <div class="project">
     <h3>CO₂ Powered Model Car</h3>
-    <h3>Created in SolidWorks</h3>
-    <p>Designed and optimized a lightweight race car using SolidWorks and produced a functional 3D printed prototype.</p>
-
-    <p>Images avaliable soon.</p>
+    <small>Created in SolidWorks</small>
+    <p>Designed and optimized a lightweight race car and produced a functional 3D printed prototype.</p>
 </div>
-    
+
+<h2 id="software">Software & Applications</h2>
+
+<div class="project">
+    <h3>Java Projects</h3>
+    <p>Foundational Java programming projects focused on structured logic and problem-solving.</p>
+</div>
+
+</div>
+
+<footer>
+    © 2026 Thomas J. Argo
+</footer>
+
 </body>
 </html>
