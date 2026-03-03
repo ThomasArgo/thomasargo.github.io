@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact | Thomas Argo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Arial;background:#0f2027;color:#e6f1ff;display:flex;flex-direction:column;min-height:100vh;}
+canvas{position:fixed;top:0;left:0;z-index:-1;}
+nav{position:fixed;top:0;width:100%;background:#111;padding:15px 40px;}
+nav a{color:white;text-decoration:none;margin-right:30px;font-size:18px;font-weight:bold;}
+main{flex:1;margin:150px auto 80px auto;max-width:800px;padding:0 20px;}
+.card{background:#1b2a38;padding:40px;border-radius:12px;}
+footer{text-align:center;padding:25px 0;background:#111;color:#aaa;}
+</style>
+</head>
+
+<body>
+<canvas id="bg"></canvas>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<main>
+<h1>Contact</h1>
+<div class="card">
+<h2>Thomas Argo</h2>
+<p><strong>Personal Email:</strong> thomasargo182@gmail.com</p>
+<p><strong>School Email:</strong> targo1@students.apsu.edu</p>
+<p><strong>Phone:</strong> 2707095600</p>
+</div>
+</main>
+
+<footer>
+Thomas J. Argo © 2026
+</footer>
+
+<script>
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particles=[];
+for(let i=0;i<160;i++){
+particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*4+1,s:Math.random()*1.5+0.5});
+}
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(255,255,255,0.5)";
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+p.y-=p.s;
+if(p.y<0)p.y=canvas.height;
+});
+requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
+</html>
