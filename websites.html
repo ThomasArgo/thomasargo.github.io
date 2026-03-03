@@ -3,40 +3,119 @@
 <head>
 <title>Websites | Thomas Argo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#0f2027;
 color:white;
-text-align:center;
-padding-top:120px;
+overflow-x:hidden;
 }
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
 nav{
 position:fixed;
 top:0;
 width:100%;
 background:#111;
 padding:15px 40px;
+z-index:1000;
 }
+
 nav a{
 color:white;
 text-decoration:none;
 margin-right:25px;
 font-weight:bold;
 }
+
+nav a:hover{opacity:.7;}
+
+.container{
+max-width:1000px;
+margin:150px auto 80px auto;
+padding:0 20px;
+text-align:center;
+}
+
+.placeholder{
+background:#1b2a38;
+padding:60px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+footer{
+width:100%;
+text-align:center;
+padding:25px 0;
+background:#111;
+color:#aaa;
+margin-top:120px;
+}
 </style>
 </head>
 
 <body>
+
+<canvas id="bg"></canvas>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="projects.html">Projects</a>
 </nav>
 
+<div class="container">
 <h1>Websites</h1>
-<p>Nothing has been added yet. Coming soon!</p>
+
+<div class="placeholder">
+<h2>Nothing has been added yet.</h2>
+<p>Coming soon!</p>
+</div>
+
+</div>
+
+<footer>
+Thomas J. Argo © 2026
+</footer>
+
+<script>
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3+1,
+s:Math.random()*1.2+0.5
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(255,255,255,0.35)";
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+p.y-=p.s;
+if(p.y<0)p.y=canvas.height;
+});
+requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
