@@ -117,7 +117,12 @@ canvas.height=window.innerHeight;
 
 let particles=[];
 for(let i=0;i<160;i++){
-particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*4+1,s:Math.random()*1.5+0.5});
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*4+1,
+s:Math.random()*1.5+0.5
+});
 }
 
 function animate(){
