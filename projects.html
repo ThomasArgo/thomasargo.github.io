@@ -12,12 +12,20 @@ background:#0f2027;
 color:white;
 }
 
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
 nav{
 position:fixed;
 top:0;
 width:100%;
 background:#111;
 padding:15px 40px;
+z-index:1000;
 }
 
 nav a{
@@ -29,29 +37,41 @@ font-weight:bold;
 
 .container{
 max-width:1000px;
-margin:120px auto;
+margin:140px auto;
 text-align:center;
 }
 
 .card{
 background:#1b2a38;
-padding:40px;
-margin:20px;
-border-radius:10px;
+padding:50px;
+margin:25px;
+border-radius:15px;
 display:inline-block;
-width:250px;
+width:260px;
 cursor:pointer;
 transition:.3s;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 .card:hover{
 background:#24384d;
-transform:translateY(-5px);
+transform:translateY(-8px);
+}
+
+footer{
+width:100%;
+text-align:center;
+padding:25px 0;
+background:#111;
+color:#aaa;
+margin-top:100px;
 }
 </style>
 </head>
 
 <body>
+
+<canvas id="bg"></canvas>
 
 <nav>
 <a href="index.html">Home</a>
@@ -62,24 +82,53 @@ transform:translateY(-5px);
 <h1>Project Categories</h1>
 
 <a href="models.html">
-<div class="card">
-<h2>3D Models</h2>
-</div>
+<div class="card"><h2>3D Models</h2></div>
 </a>
 
 <a href="websites.html">
-<div class="card">
-<h2>Websites</h2>
-</div>
+<div class="card"><h2>Websites</h2></div>
 </a>
 
 <a href="apps.html">
-<div class="card">
-<h2>Apps</h2>
-</div>
+<div class="card"><h2>Apps</h2></div>
 </a>
 
 </div>
+
+<footer>
+Thomas J. Argo © 2026
+</footer>
+
+<script>
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3+1,
+s:Math.random()*1.2+0.5
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(255,255,255,0.35)";
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+p.y-=p.s;
+if(p.y<0)p.y=canvas.height;
+});
+requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
