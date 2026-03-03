@@ -11,6 +11,11 @@ font-family:Arial, sans-serif;
 background:#0f2027;
 color:white;
 overflow-x:hidden;
+
+/* ADD THESE THREE LINES */
+display:flex;
+flex-direction:column;
+min-height:100vh;
 }
 
 canvas{
@@ -43,6 +48,9 @@ max-width:1000px;
 margin:150px auto 80px auto;
 padding:0 20px;
 text-align:center;
+
+/* THIS MAKES FOOTER STAY DOWN */
+flex:1;
 }
 
 .placeholder{
@@ -58,7 +66,6 @@ text-align:center;
 padding:25px 0;
 background:#111;
 color:#aaa;
-margin-top:120px;
 }
 </style>
 </head>
@@ -70,6 +77,7 @@ margin-top:120px;
 <nav>
 <a href="index.html">Home</a>
 <a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
