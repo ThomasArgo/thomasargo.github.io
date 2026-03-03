@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3D Models | Thomas Argo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0f2027;
+color:white;
+overflow-x:hidden;
+}
+
+/* Background particles */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* Navigation */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#111;
+padding:15px 40px;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-right:25px;
+font-weight:bold;
+}
+
+nav a:hover{
+opacity:.7;
+}
+
+/* Layout */
+.container{
+max-width:1100px;
+margin:120px auto 60px auto;
+padding:0 20px;
+}
+
+h1{
+margin-bottom:20px;
+}
+
+.project{
+background:#1b2a38;
+padding:25px;
+margin-bottom:30px;
+border-radius:10px;
+box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+.project small{
+color:#ccc;
+display:block;
+margin-bottom:10px;
+}
+
+/* Image grid */
+.image-grid{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:15px;
+}
+
+.image-grid img{
+width:48%;
+border-radius:8px;
+}
+
+@media (max-width:768px){
+.image-grid img{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
+<div class="container">
+
+<h1>3D Modeling & Mechanical Projects</h1>
+
+<div class="project">
+<h2>Zero-Turn Lawn Mower Assembly</h2>
+<small>Created in Blender</small>
+<p>
+Fully detailed mechanical assembly modeled with precise scaling, structural alignment,
+and component relationships.
+</p>
+
+<div class="image-grid">
+<img src="ZeroTurn1.png" alt="Zero Turn 1">
+<img src="ZeroTurn2.png" alt="Zero Turn 2">
+<img src="ZeroTurn3.png" alt="Zero Turn 3">
+<img src="ZeroTurn4.png" alt="Zero Turn 4">
+</div>
+</div>
+
+<div class="project">
+<h2>Tensegrity Table</h2>
+<small>Created in Onshape</small>
+<p>
+Designed a structurally balanced model applying principles of tension and compression.
+</p>
+
+<div class="image-grid">
+<img src="TensegrityTable.png" alt="Tensegrity Table">
+</div>
+</div>
+
+<div class="project">
+<h2>Butterfly Valve Body</h2>
+<small>Created in Onshape</small>
+<p>
+Modeled a functional butterfly valve body with precise dimensional constraints and
+component alignment.
+</p>
+
+<div class="image-grid">
+<img src="ButterflyValve.png" alt="Butterfly Valve Body">
+</div>
+</div>
+
+<div class="project">
+<h2>CO₂ Powered Model Car</h2>
+<small>Created in SolidWorks</small>
+<p>
+Designed and optimized a lightweight race car and produced a functional 3D printed prototype.
+</p>
+</div>
+
+</div>
+
+<script>
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<100;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+radius:Math.random()*3+1,
+speed:Math.random()*1+0.5
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(255,255,255,0.35)";
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+ctx.fill();
+p.y-=p.speed;
+if(p.y<0)p.y=canvas.height;
+});
+requestAnimationFrame(animate);
+}
+animate();
+
+window.onresize=function(){
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+};
+</script>
+
+</body>
+</html>
