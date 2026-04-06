@@ -32,9 +32,10 @@ export default function Models() {
         <MediaGallery media={spotlight.media} title={spotlight.title} />
       </MotionSection>
 
-      <MotionSection className="model-grid">
+      <div className="model-grid">
         {remaining.map((model) => (
-          <SectionCard className="model-card" key={model.title}>
+          <MotionSection className="model-card-wrap" key={model.title}>
+            <SectionCard className="model-card">
             <div className="section-heading">
               <div>
                 <h2>{model.title}</h2>
@@ -48,9 +49,10 @@ export default function Models() {
               media={model.media}
               title={model.title}
             />
-          </SectionCard>
+            </SectionCard>
+          </MotionSection>
         ))}
-      </MotionSection>
+      </div>
     </div>
   );
 }

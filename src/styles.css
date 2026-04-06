@@ -97,7 +97,11 @@ textarea {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.68;
+  opacity: 1;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(64, 129, 210, 0.13), transparent 0 26%),
+    radial-gradient(circle at 80% 12%, rgba(93, 143, 255, 0.12), transparent 0 22%),
+    linear-gradient(180deg, rgba(7, 17, 26, 0.96), rgba(6, 16, 24, 0.98));
 }
 
 .background-grid {
@@ -117,10 +121,12 @@ textarea {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.045;
+  opacity: 0.06;
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.8) 1px, transparent 0);
-  background-size: 12px 12px;
+    radial-gradient(circle at 1px 1px, rgba(170, 213, 255, 0.9) 1px, transparent 0),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.45) 1px, transparent 0);
+  background-size: 12px 12px, 18px 18px;
+  background-position: 0 0, 6px 6px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 90%);
 }
 
@@ -281,10 +287,10 @@ textarea {
   border-radius: var(--radius-xl);
   padding: clamp(1.35rem, 2vw, 2rem);
   transition:
-    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .surface-card::before {
@@ -529,7 +535,7 @@ textarea {
 .model-card:hover,
 .apps-card:hover,
 .contact-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--line-strong);
   box-shadow:
     var(--shadow),
@@ -687,6 +693,10 @@ textarea {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.model-card-wrap {
+  min-width: 0;
+}
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -722,7 +732,7 @@ textarea {
 }
 
 .media-frame:hover .media-item {
-  transform: translateY(-6px) scale(1.0125);
+  transform: translateY(-4px) scale(1.008);
   box-shadow:
     0 24px 48px rgba(0, 0, 0, 0.36),
     0 0 0 1px rgba(121, 208, 255, 0.12),
@@ -777,7 +787,7 @@ textarea {
 }
 
 .website-card:hover .feature-logo {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.28),
     0 0 0 1px rgba(121, 208, 255, 0.14),
