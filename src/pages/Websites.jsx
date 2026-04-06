@@ -1,6 +1,8 @@
 import PageHero from "../components/PageHero";
 import PageMeta from "../components/PageMeta";
+import MotionSection from "../components/MotionSection";
 import SectionCard from "../components/SectionCard";
+import TagList from "../components/TagList";
 import { websiteProjects } from "../data/portfolio";
 
 export default function Websites() {
@@ -8,23 +10,29 @@ export default function Websites() {
     <div className="page">
       <PageMeta title="Websites" />
       <PageHero
-        eyebrow="Projects"
-        title="Websites"
-        description="Browser-based work carried over from the legacy portfolio and packaged for the new React site."
+        align="left"
+        eyebrow="Web work"
+        title="Browser-based builds with a more product-grade presentation."
+        description="Website projects are presented as polished technical products, with clearer hierarchy, richer surfaces, and stronger identity."
+        tags={["Frontend", "Interactive", "Product Thinking"]}
       />
 
-      <div className="stacked-sections">
+      <MotionSection className="stacked-sections">
         {websiteProjects.map((project) => (
-          <SectionCard className="feature-card page-fade" key={project.title}>
-            <img
-              alt={`${project.title} logo`}
-              className="feature-logo"
-              loading="lazy"
-              src={project.image}
-            />
-            <div className="feature-copy">
+          <SectionCard className="website-card" key={project.title}>
+            <div className="website-card__media">
+              <img
+                alt={`${project.title} logo`}
+                className="feature-logo"
+                loading="lazy"
+                src={project.image}
+              />
+            </div>
+            <div className="website-card__copy">
+              <p className="eyebrow">{project.eyebrow}</p>
               <h2>{project.title}</h2>
               <p>{project.description}</p>
+              <TagList tags={project.tags} />
               <a
                 className="button-primary"
                 href={project.href}
@@ -36,7 +44,7 @@ export default function Websites() {
             </div>
           </SectionCard>
         ))}
-      </div>
+      </MotionSection>
     </div>
   );
 }

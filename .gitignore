@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 /thomasargo.github.io/
 old-site/**/.git-disabled/
+
+.vercel
