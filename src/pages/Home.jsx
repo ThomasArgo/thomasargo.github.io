@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import PageMeta from "../components/PageMeta";
 import MotionSection from "../components/MotionSection";
 import SectionCard from "../components/SectionCard";
@@ -12,8 +11,6 @@ import {
   projectCategories,
   siteMeta,
 } from "../data/portfolio";
-
-const MotionDiv = motion.div;
 
 export default function Home() {
   return (
@@ -72,7 +69,7 @@ export default function Home() {
         </div>
         <div className="featured-grid">
           {featuredWork.map((item) => (
-            <MotionDiv key={item.title} whileHover={{ y: -8 }}>
+            <div key={item.title}>
               <Link className="featured-card surface-card" to={item.route}>
                 <div className="featured-card__image-wrap">
                   <img alt={item.title} className="featured-card__image" src={item.image} />
@@ -84,7 +81,7 @@ export default function Home() {
                   <TagList tags={item.tags} />
                 </div>
               </Link>
-            </MotionDiv>
+            </div>
           ))}
         </div>
       </MotionSection>
@@ -128,9 +125,7 @@ export default function Home() {
         <div>
           <p className="eyebrow">Next step</p>
           <h2>Looking for someone who can design, build, and present technical work well?</h2>
-          <p>
-            I’m building projects that combine engineering clarity with polished execution.
-          </p>
+          <p>{"I'm building projects that combine engineering clarity with polished execution."}</p>
         </div>
         <Link className="button-primary" to="/contact">
           Let&apos;s Connect

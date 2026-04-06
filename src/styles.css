@@ -20,9 +20,9 @@
   --accent-soft: rgba(47, 168, 255, 0.14);
   --text-soft: rgba(225, 236, 255, 0.72);
   --text-muted: rgba(178, 195, 220, 0.56);
-  --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
-  --shadow-soft: 0 14px 32px rgba(0, 0, 0, 0.22);
-  --glow: 0 0 0 1px rgba(121, 208, 255, 0.16), 0 0 28px rgba(47, 168, 255, 0.14);
+  --shadow: 0 20px 46px rgba(0, 0, 0, 0.28);
+  --shadow-soft: 0 10px 20px rgba(0, 0, 0, 0.16);
+  --glow: 0 0 0 1px rgba(121, 208, 255, 0.12), 0 0 16px rgba(47, 168, 255, 0.08);
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -158,8 +158,8 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 1rem;
-  backdrop-filter: blur(16px);
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(10px);
 }
 
 .site-nav {
@@ -173,7 +173,7 @@ textarea {
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
   background: rgba(8, 17, 32, 0.72);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
   transition:
     border-color 260ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -249,7 +249,7 @@ textarea {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   color: #fff;
   background: rgba(255, 255, 255, 0.04);
   border-color: var(--line);
@@ -266,7 +266,7 @@ textarea {
 .page-shell {
   width: min(var(--max-width), calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2rem 0 4rem;
+  padding: 1.4rem 0 4rem;
   flex: 1;
 }
 
@@ -283,7 +283,7 @@ textarea {
     linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.01)),
     var(--panel);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(12px);
   border-radius: var(--radius-xl);
   padding: clamp(1.35rem, 2vw, 2rem);
   transition:
@@ -307,7 +307,7 @@ textarea {
 .section-intro h2,
 .cta-banner h2 {
   margin: 0;
-  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-size: clamp(2.35rem, 4.8vw, 4.2rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
 }
@@ -347,9 +347,9 @@ textarea {
 
 .hero-shell {
   display: grid;
-  grid-template-columns: 1.35fr 0.9fr;
-  gap: 1.5rem;
-  min-height: 36rem;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 1.1rem;
+  min-height: 28rem;
   align-items: stretch;
 }
 
@@ -446,7 +446,7 @@ textarea {
 .button-primary:focus-visible,
 .button-secondary:focus-visible,
 .card-link:hover {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
 }
 
 .button-primary:hover,
@@ -535,7 +535,7 @@ textarea {
 .model-card:hover,
 .apps-card:hover,
 .contact-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-1px);
   border-color: var(--line-strong);
   box-shadow:
     var(--shadow),
@@ -566,8 +566,8 @@ textarea {
 }
 
 .featured-card:hover .featured-card__image {
-  transform: scale(1.035);
-  filter: saturate(1.04);
+  transform: scale(1.012);
+  filter: saturate(1.01);
 }
 
 .featured-card__body {
@@ -603,11 +603,11 @@ textarea {
   display: grid;
   align-content: start;
   gap: 1rem;
-  min-height: 18rem;
+  min-height: 15.5rem;
 }
 
 .category-card__copy {
-  min-height: 4.8rem;
+  min-height: 3.8rem;
 }
 
 .card-link {
@@ -732,7 +732,7 @@ textarea {
 }
 
 .media-frame:hover .media-item {
-  transform: translateY(-4px) scale(1.008);
+  transform: translateY(-1px) scale(1.002);
   box-shadow:
     0 24px 48px rgba(0, 0, 0, 0.36),
     0 0 0 1px rgba(121, 208, 255, 0.12),
@@ -787,7 +787,7 @@ textarea {
 }
 
 .website-card:hover .feature-logo {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.28),
     0 0 0 1px rgba(121, 208, 255, 0.14),
@@ -907,6 +907,44 @@ textarea {
 
 .footer-meta {
   color: var(--text-muted);
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --max-width: 1160px;
+  }
+
+  .page {
+    gap: 1.75rem;
+  }
+
+  .site-nav {
+    max-width: 1100px;
+  }
+
+  .hero-shell {
+    min-height: 26rem;
+  }
+
+  .display-title {
+    max-width: 11ch;
+  }
+
+  .section-intro {
+    max-width: 44rem;
+  }
+
+  .featured-grid,
+  .capability-grid,
+  .category-grid,
+  .model-grid,
+  .stats-row {
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.15rem 1.3rem;
+  }
 }
 
 @media (max-width: 1100px) {
