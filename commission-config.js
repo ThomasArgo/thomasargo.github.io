@@ -1,5 +1,5 @@
 // Replace this single value with your published Google Form URL.
-const COMMISSION_FORM_URL = 'YOUR_GOOGLE_FORM_URL_HERE';
+const COMMISSION_FORM_URL = 'https://forms.gle/jDVkwRx8pmPc6W4HA';
 
 document.querySelectorAll('[data-commission-link]').forEach(link => {
   link.href = COMMISSION_FORM_URL;
