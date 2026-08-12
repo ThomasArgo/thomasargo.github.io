@@ -1,11 +1,1 @@
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.site-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => { const open = nav.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', String(open)); });
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }));
-}
-document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }), { threshold:.12 });
-  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
-} else document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.site-nav');if(toggle&&nav){toggle.onclick=()=>{const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',open)};nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')})}document.querySelectorAll('[data-year]').forEach(x=>x.textContent=new Date().getFullYear());const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;if(!reduced&&'IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}),{threshold:.13});document.querySelectorAll('[data-reveal]').forEach(x=>observer.observe(x))}else document.querySelectorAll('[data-reveal]').forEach(x=>x.classList.add('is-visible'));const progress=document.querySelector('.progress i');if(progress&&!reduced)addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${h?scrollY/h:0})`},{passive:true});
