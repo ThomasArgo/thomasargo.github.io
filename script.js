@@ -62,6 +62,9 @@ document.querySelectorAll('.process-rail a').forEach(link => {
   if (link.querySelector('strong')?.textContent.trim() === 'Make') link.href = 'fabrication.html';
 });
 
+// Project photography is primary page content, not a deferred thumbnail.
+document.querySelectorAll('.gallery--natural img').forEach(image => image.removeAttribute('loading'));
+
 const sharedEnhancements = document.createElement('style');
 sharedEnhancements.textContent = `
   .hero-gear { background:#10272e; box-shadow:var(--shadow); }
@@ -69,6 +72,10 @@ sharedEnhancements.textContent = `
   .hero-gear .machine-grid { z-index:1; background-image:linear-gradient(rgba(141,218,203,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(141,218,203,.13) 1px,transparent 1px); }
   .hero-gear > p { z-index:2; left:auto; right:1rem; bottom:1rem; padding:.6rem .7rem; border:1px solid rgba(174,229,220,.35); border-radius:.45rem; color:#e6f8f3; background:rgba(9,33,38,.72); backdrop-filter:blur(8px); font-size:.78rem; }
   .hero-gear > p span { display:block; margin-bottom:.2rem; color:#91d7cc; font:500 .65rem 'DM Mono',monospace; letter-spacing:.06em; text-transform:uppercase; }
+  .fabrication-laser-section { padding:0 0 5.6rem; }
+  .fabrication-laser-section .section-heading { padding-top:1.2rem; border-top:1px solid var(--line); }
+  .gallery--natural img { aspect-ratio:auto; object-fit:contain; background:#fff; }
+  @media (max-width:720px) { .fabrication-laser-section { padding-bottom:3.8rem; } }
   @media (max-width:720px) { .hero--maker { padding:2.8rem 0 3.3rem; } .hero-gear { min-height:16rem; max-width:34rem; } .hero-gear > p { right:.75rem; bottom:.75rem; } }
 `;
 document.head.append(sharedEnhancements);
