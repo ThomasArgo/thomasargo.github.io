@@ -56,11 +56,6 @@ if (heroMachine) {
   heroMachine.innerHTML = `<div class="machine-grid" aria-hidden="true"></div><img src="TopView.gif" alt="Animated planetary gear assembly demonstrating mechanical motion"><p><span>Motion study / 01</span>Planetary gear assembly</p>`;
 }
 
-// Keep the homepage's fabrication pathway inside the unified portfolio shell.
-document.querySelectorAll('.process-rail a').forEach(link => {
-  if (link.querySelector('strong')?.textContent.trim() === 'Make') link.href = 'fabrication.html';
-});
-
 // Project photography is primary page content, not a deferred thumbnail.
 document.querySelectorAll('.gallery--natural img').forEach(image => image.removeAttribute('loading'));
 
