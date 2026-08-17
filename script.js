@@ -2,7 +2,6 @@
 const PORTFOLIO_NAV = [
   ['index.html', 'Home'],
   ['projects.html', 'Projects'],
-  ['fabrication.html', 'Fabrication'],
   ['commissions.html', 'Commissions'],
   ['contact.html', 'Contact']
 ];
