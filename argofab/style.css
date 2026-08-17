@@ -19,3 +19,5 @@ body{background:radial-gradient(circle at 80% -10%,#d3eeff 0,transparent 32rem),
 .metric,.card{border-color:rgba(188,210,216,.9)!important;box-shadow:var(--shadow)!important;transition:transform .2s,box-shadow .2s}.metric:hover,.card:hover{transform:translateY(-2px);box-shadow:0 22px 45px rgba(15,46,59,.15)!important}
 .metric{background:linear-gradient(145deg,#fff,#f1f8fa)!important}.metric strong{color:#075b8e}.button.primary{background:linear-gradient(135deg,#087de8,#08ace8)!important;border-color:#087de8!important;box-shadow:0 8px 18px rgba(8,125,232,.22)!important}.button.primary:hover{background:linear-gradient(135deg,#056bd0,#0799cf)!important;transform:translateY(-1px)}
 .results{background:linear-gradient(155deg,#092b39,#075d7e)}.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(8,172,232,.25);border-color:#08ace8}.table tbody tr{transition:background .15s}.table tbody tr:hover{background:#ecf8fc}.pill{background:#e0f5ff;color:#075b8e}
+/* Keep the mark compact in the application shell. */
+.logo img{width:31px;height:31px;border-radius:8px;object-fit:cover;flex:0 0 31px}
