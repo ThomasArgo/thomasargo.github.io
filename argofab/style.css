@@ -21,3 +21,10 @@ body{background:radial-gradient(circle at 80% -10%,#d3eeff 0,transparent 32rem),
 .results{background:linear-gradient(155deg,#092b39,#075d7e)}.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(8,172,232,.25);border-color:#08ace8}.table tbody tr{transition:background .15s}.table tbody tr:hover{background:#ecf8fc}.pill{background:#e0f5ff;color:#075b8e}
 /* Keep the mark compact in the application shell. */
 .logo img{width:31px;height:31px;border-radius:8px;object-fit:cover;flex:0 0 31px}
+/* Shell guardrails: no child, including a cached brand image, can expand the dashboard. */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.app{display:grid!important;grid-template-columns:238px minmax(0,1fr)!important;min-height:100vh;width:100%;max-width:100%;overflow:hidden}
+.sidebar{width:auto!important;min-width:0;max-width:238px;overflow:hidden}
+.sidebar .logo{min-width:0;max-width:100%;overflow:hidden}.sidebar .logo b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sidebar .logo img{display:block!important;width:31px!important;height:31px!important;min-width:31px!important;max-width:31px!important;min-height:31px!important;max-height:31px!important;object-fit:cover!important;flex:0 0 31px!important}
+main{min-width:0;max-width:100%;overflow:hidden}.topbar{width:100%;max-width:100%}.page{min-width:0;max-width:1440px}
+@media(max-width:900px){.app{display:block!important;overflow:visible}.sidebar{width:min(84vw,300px)!important;max-width:none}.sidebar .logo img{width:31px!important;height:31px!important}.topbar,main{width:100%}}
