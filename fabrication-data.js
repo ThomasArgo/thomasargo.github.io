@@ -42,10 +42,11 @@ const PHYSICAL_PRINTS = [
   },
   //Dr Doom
   {
-    id: 'dr-doom', category: 'art', title: 'Dr Doom',
-    shortDescription: 'A polished FDM multicolor print with impeccable quality.',
-    tags: ['Multicolor printing', 'Acrylic paint'],
-    images: [{ src: 'prints/dr-doom.png', alt: 'Green and metallic Dr Doom character 3D print' }]
+    id: 'dr-doom', category: 'art', title: 'Dr. Doom',
+    shortDescription: 'A polished mutlicolor FDM print with impeccable quality.',
+    description: 'An FDM character display print with fine details and acrylic painted parts.',
+    tags: ['Multicolor printing', 'Finishing'],
+    images: [{ src: 'prints/dr-doom.png', alt: 'Green and Metallic Dr. Doom character 3D print' }]
   },
   //Venom Spiderman
   {
