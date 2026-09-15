@@ -43,7 +43,7 @@ const PHYSICAL_PRINTS = [
   //Dr Doom
   {
     id: 'dr-doom', category: 'art', title: 'Dr Doom',
-    shortDescriptionL 'A polished FDM multicolor print with impeccable quality.',
+    shortDescription: 'A polished FDM multicolor print with impeccable quality.',
     tags: ['Multicolor printing', 'Acrylic paint'],
     images: [{ src: 'prints/dr-doom.png', alt: 'Green and metallic Dr Doom character 3D print' }]
   },
