@@ -16,6 +16,7 @@ const PHYSICAL_PRINTS = [
       { src: 'prints/prosthetic-pylon-cover-parts.png', alt: 'Two separate black 3D-printed prosthetic pylon cover components' }
     ]
   },
+  //Lego Skeleton
   {
     id: 'giant-lego-skeleton', category: 'art', title: 'Giant LEGO Skeleton',
     shortDescription: 'Large-format, multipart FDM printing and assembly in a finished display piece.',
@@ -23,6 +24,7 @@ const PHYSICAL_PRINTS = [
     tags: ['Large-format print', 'Multipart assembly'],
     images: [{ src: 'prints/giant-lego-skeleton.png', alt: 'Large white LEGO skeleton 3D print' }]
   },
+  //Lego Batman
   {
     id: 'giant-lego-batman', category: 'art', title: 'Giant LEGO Batman',
     shortDescription: 'A large-scale FDM character print with separate parts brought together as a finished figure.',
@@ -30,6 +32,7 @@ const PHYSICAL_PRINTS = [
     tags: ['Large-format print', 'Assembly'],
     images: [{ src: 'prints/giant-lego-batman.png', alt: 'Large gray and black LEGO Batman 3D print holding a bat-shaped accessory' }]
   },
+  //Cyclops
   {
     id: 'cyclops', category: 'art', title: 'Cyclops',
     shortDescription: 'A finished multicolor FDM character print with clearly separated color areas.',
@@ -37,6 +40,14 @@ const PHYSICAL_PRINTS = [
     tags: ['Multicolor printing', 'Print preparation'],
     images: [{ src: 'prints/cyclops.png', alt: 'Blue and yellow Cyclops character 3D print' }]
   },
+  //Dr Doom
+  {
+    id: 'dr-doom', category: 'art', title: 'Dr Doom',
+    shortDescriptionL 'A polished FDM multicolor print with impeccable quality.',
+    tags: ['Multicolor printing', 'Acrylic paint'],
+    images: [{ src: 'prints/dr-doom.png', alt: 'Green and metallic Dr Doom character 3D print' }]
+  },
+  //Venom Spiderman
   {
     id: 'venom-spiderman', category: 'art', title: 'Venom Spider-Man',
     shortDescription: 'A finished character display print that preserves fine surface and costume details.',
@@ -44,6 +55,7 @@ const PHYSICAL_PRINTS = [
     tags: ['Surface detail', 'Finishing'],
     images: [{ src: 'prints/venom-spiderman.png', alt: 'Black Venom Spider-Man crouching character 3D print' }]
   },
+  //Darth Vader Bust
   {
     id: 'darth-vader-bust', category: 'art', title: 'Darth Vader Bust',
     shortDescription: 'A detailed FDM bust print focused on clean silhouette and surface-detail reproduction.',
@@ -51,6 +63,7 @@ const PHYSICAL_PRINTS = [
     tags: ['Surface detail', 'Long-duration print'],
     images: [{ src: 'prints/darth-vader-bust.png', alt: 'Black Darth Vader bust 3D print on a base' }]
   },
+  //Mandalorian Bust
   {
     id: 'mandalorian-bust', category: 'art', title: 'Mandalorian Bust',
     shortDescription: 'A detailed FDM bust print that showcases layered armor and costume details.',
@@ -58,6 +71,7 @@ const PHYSICAL_PRINTS = [
     tags: ['Surface detail', 'Print preparation'],
     images: [{ src: 'prints/mandalorian-bust.png', alt: 'Gray Mandalorian bust 3D print on a round base' }]
   },
+  //AT-AT
   {
     id: 'at-at', category: 'art', title: 'AT-AT',
     shortDescription: 'An FDM display print with small mechanical features and a multipart construction.',
@@ -65,6 +79,7 @@ const PHYSICAL_PRINTS = [
     tags: ['Mechanical detail', 'Print preparation'],
     images: [{ src: 'prints/at-at.png', alt: 'Dark gray AT-AT walker 3D print' }]
   },
+  //Venom Bust
   {
     id: 'venom-bust', category: 'art', title: 'Venom Bust',
     shortDescription: 'A finished FDM bust print with high-contrast character details.',
