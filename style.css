@@ -42,3 +42,6 @@ h1,h2,h3 { margin:0; line-height:1.08; letter-spacing:-.055em; } h1 { max-width:
 @media(max-width:1050px){.print-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:720px){.print-case-study{grid-template-columns:1fr;padding:1rem}.print-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}.print-card>div{padding:1rem}.print-card h3{font-size:1.15rem}.print-card .print-tags{margin:.8rem 0}.print-tags li{font-size:.68rem}.print-dialog{width:calc(100% - 1rem);max-height:calc(100dvh - 1rem);padding:1rem}#print-detail{grid-template-columns:1fr}.dialog-print-copy{padding-top:0}.dialog-print-images img{max-height:none;aspect-ratio:1/1}}
 @media(max-width:480px){.print-gallery{grid-template-columns:1fr}.print-case-images{gap:.65rem}}
+/* GCode Rebuilder portfolio preview */
+.project-card--preview{grid-template-columns:minmax(12rem,18rem) 1fr}.project-preview{display:block;width:100%;border:1px solid var(--line);border-radius:.75rem;background:#102f38;box-shadow:var(--shadow)}
+@media(max-width:720px){.project-card--preview{grid-template-columns:1fr}}
