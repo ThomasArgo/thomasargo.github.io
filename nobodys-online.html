@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Nobody’s Online, an original pixel-horror browser game by Thomas Argo. Explore a quiet house, finish your chores, and investigate a fictional internet.">
+  <title>Nobody’s Online | Thomas Argo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .game-intro h1{max-width:14ch}.game-intro .button-row{margin-top:1.5rem}.game-facts{padding:1.5rem 0 2rem}.game-gallery{margin:1.5rem 0 0}.game-gallery figure{margin:0}.game-gallery img{height:auto;aspect-ratio:16/9;object-fit:contain;background:#101b22;image-rendering:pixelated}.game-gallery figcaption{padding:.65rem 0;color:var(--muted);font-size:.9rem}.game-details{padding:2rem 0 4rem}.game-details article{padding:1.5rem}.game-details h2{font-size:1.6rem}.game-details p{margin:1rem 0}.game-details ul{padding-left:1.25rem}.game-gallery a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to game</a>
+  <header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">TA</span><span>Thomas Argo</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav class="site-nav" id="site-nav" aria-label="Primary"></nav></div></header>
+  <main id="content">
+    <section class="page-intro game-intro" data-reveal>
+      <p class="eyebrow">An original browser game / Thomas Argo</p>
+      <h1>Nobody’s Online</h1>
+      <p>Finish your chores. Check your messages. Remember who is still here.</p>
+      <p>Walk through a quiet house and a familiar desktop as ordinary evenings become harder to explain. The bills keep rising. Your contacts keep replying. Something is using the house to keep the conversation alive.</p>
+      <div class="button-row"><a class="btn" href="https://thomasargo.github.io/nobodys-online/" target="_blank" rel="noopener noreferrer">Play Game <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="websites.html">Back to Web Tools</a></div>
+      <p class="project-meta">TypeScript · Phaser 3 · Vite · Web Audio</p>
+    </section>
+    <section class="game-facts" aria-label="Game features">
+      <div class="feature-grid">
+        <article class="feature-card" data-reveal><h3>A house to inhabit</h3><p>Three connected floors, original pixel art, household chores, working lights and appliances, and a power bill that reacts to your choices.</p></article>
+        <article class="feature-card" data-reveal><h3>An internet to investigate</h3><p>Nine desktop applications, five fictional websites, remembered conversations, local files, and evidence you can collect in a notebook.</p></article>
+        <article class="feature-card" data-reveal><h3>An evening to remember</h3><p>A prologue and four nights lead to four endings: Disconnect, Upload, Loop, and Last Connection. Your decisions and discoveries persist.</p></article>
+      </div>
+      <div class="gallery game-gallery">
+        <figure data-reveal><a href="assets/nobodys-online/house.png"><img src="assets/nobodys-online/house.png" width="1366" height="768" alt="The playable bedroom with a bed, rug, computer desk and wall-mounted light switch" loading="lazy"></a><figcaption>Explore the house and walk up to objects to interact.</figcaption></figure>
+        <figure data-reveal><a href="assets/nobodys-online/desktop.png"><img src="assets/nobodys-online/desktop.png" width="1366" height="768" alt="The Hearth desktop and WireTree messenger displaying the first strange conversation" loading="lazy"></a><figcaption>Read messages, investigate clues, and watch the household power meter.</figcaption></figure>
+      </div>
+    </section>
+    <section class="category-grid game-details" aria-label="Before you play">
+      <article class="feature-card" data-reveal><h2>Controls</h2><ul><li>WASD or arrow keys: move. Shift: walk faster.</li><li>E or Space: interact. Click the floor or an object to walk toward it.</li><li>Objects: choose a clear destination when objects are close together.</li><li>Tab: tasks. Escape: pause or leave the computer.</li><li>F: flashlight when it becomes available.</li><li>On touch screens, use the directional pad and Interact button.</li></ul></article>
+      <article class="feature-card" data-reveal><h2>Browser and mobile</h2><p>Play directly in a modern browser with JavaScript and WebGL enabled. Desktop gives the computer windows more room; phones have touch controls and a responsive interface.</p><p>The game includes fullscreen, keyboard menus, captions, reduced motion and flicker, high-contrast prompts, text scaling, audio controls, and optional fatigue pressure.</p></article>
+      <article class="feature-card" data-reveal><h2>Content notice</h2><p>Psychological horror, isolation, unsettling imagery, simulated surveillance, and flickering lights. Reduced-motion and flicker settings are available before starting.</p><p>Headphones are optional. Sound captions let you follow important audio cues without listening.</p></article>
+      <article class="feature-card" data-reveal><h2>Your progress stays here</h2><p>Your invented handle, notes, choices, settings, and progress are saved in this browser. There are no accounts, analytics, ads, or uploads of game data. All in-game websites and conversations are fictional and bundled with the game.</p><p>Use Settings to delete saved data. Clearing browser storage also removes progress; saves do not sync between devices.</p></article>
+    </section>
+  </main>
+  <footer class="site-footer"><p>© <span data-year>2026</span> Thomas Argo. All rights reserved.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
